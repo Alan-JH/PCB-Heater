@@ -1,0 +1,4 @@
+(fp_lib_table
+  (lib (name "PCB Heater")(type KiCad)(uri "${KIPRJMOD}/PCB Heater.pretty")(options "")(descr ""))
+  (lib (name Connectors)(type KiCad)(uri ${KIPRJMOD}/Connectors.pretty)(options "")(descr ""))
+)
