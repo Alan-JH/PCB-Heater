@@ -3,7 +3,7 @@ EELAYER 30 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
-Sheet 2 2
+Sheet 1 1
 Title "PCB Heating Element"
 Date "2021-08-25"
 Rev "0.1"
@@ -79,10 +79,6 @@ Wire Wire Line
 	3150 1550 3150 1850
 Wire Wire Line
 	3150 1850 3800 1850
-Text HLabel 3050 1600 0    50   Input ~ 0
-+
-Text HLabel 3150 1600 2    50   Input ~ 0
--
 $Comp
 L Connector:Conn_01x01_Female J2
 U 1 1 61234B6A

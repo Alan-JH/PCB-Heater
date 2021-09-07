@@ -3,7 +3,7 @@ EELAYER 30 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
-Sheet 1 2
+Sheet 1 1
 Title "Heater Control Board"
 Date "2021-08-25"
 Rev "0.1"
@@ -13,14 +13,6 @@ Comment2 "7 Segment displays to show temperature, target, and time"
 Comment3 "Attiny1614 running PID loop, reflow profile saved to SD"
 Comment4 ""
 $EndDescr
-$Sheet
-S 6350 2500 550  300 
-U 61206046
-F0 "Heater" 50
-F1 "Heater.sch" 50
-F2 "+" I L 6350 2600 50 
-F3 "-" I L 6350 2700 50 
-$EndSheet
 $Comp
 L power:GND #PWR0101
 U 1 1 6121F583
@@ -1156,98 +1148,6 @@ Text Label 2550 5450 0    50   ~ 0
 K10
 Text Label 2550 5550 0    50   ~ 0
 K11
-$Comp
-L Jumper:SolderJumper_2_Open JP3
-U 1 1 6143BA2B
-P 1600 7600
-F 0 "JP3" H 1600 7805 50  0000 C CNN
-F 1 "A0" H 1600 7714 50  0000 C CNN
-F 2 "Jumper:SolderJumper-2_P1.3mm_Open_Pad1.0x1.5mm" H 1600 7600 50  0001 C CNN
-F 3 "~" H 1600 7600 50  0001 C CNN
-	1    1600 7600
-	1    0    0    -1  
-$EndComp
-$Comp
-L Jumper:SolderJumper_2_Open JP2
-U 1 1 61439426
-P 1600 7300
-F 0 "JP2" H 1600 7505 50  0000 C CNN
-F 1 "A1" H 1600 7414 50  0000 C CNN
-F 2 "Jumper:SolderJumper-2_P1.3mm_Open_Pad1.0x1.5mm" H 1600 7300 50  0001 C CNN
-F 3 "~" H 1600 7300 50  0001 C CNN
-	1    1600 7300
-	1    0    0    -1  
-$EndComp
-$Comp
-L Jumper:SolderJumper_2_Open JP1
-U 1 1 61437829
-P 1600 7000
-F 0 "JP1" H 1600 7205 50  0000 C CNN
-F 1 "A2" H 1600 7114 50  0000 C CNN
-F 2 "Jumper:SolderJumper-2_P1.3mm_Open_Pad1.0x1.5mm" H 1600 7000 50  0001 C CNN
-F 3 "~" H 1600 7000 50  0001 C CNN
-	1    1600 7000
-	1    0    0    -1  
-$EndComp
-$Comp
-L Device:D D2
-U 1 1 6145F0AE
-P 2350 7300
-F 0 "D2" H 2350 7517 50  0000 C CNN
-F 1 "1N4148" H 2350 7426 50  0000 C CNN
-F 2 "Diode_SMD:D_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 2350 7300 50  0001 C CNN
-F 3 "~" H 2350 7300 50  0001 C CNN
-	1    2350 7300
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	2050 7600 2050 7300
-Connection ~ 2050 7300
-Wire Wire Line
-	2050 7300 2050 7000
-Wire Wire Line
-	2050 7300 2200 7300
-Text Label 2500 7300 0    50   ~ 0
-COM1
-$Comp
-L Device:R R25
-U 1 1 61470E24
-P 1900 7000
-F 0 "R25" V 1800 7000 50  0000 C CNN
-F 1 "39K" V 1900 7000 50  0000 C CNN
-F 2 "Resistor_SMD:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder" V 1830 7000 50  0001 C CNN
-F 3 "~" H 1900 7000 50  0001 C CNN
-	1    1900 7000
-	0    1    1    0   
-$EndComp
-$Comp
-L Device:R R26
-U 1 1 61471F8C
-P 1900 7300
-F 0 "R26" V 1800 7300 50  0000 C CNN
-F 1 "39K" V 1900 7300 50  0000 C CNN
-F 2 "Resistor_SMD:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder" V 1830 7300 50  0001 C CNN
-F 3 "~" H 1900 7300 50  0001 C CNN
-	1    1900 7300
-	0    1    1    0   
-$EndComp
-$Comp
-L Device:R R27
-U 1 1 6147468E
-P 1900 7600
-F 0 "R27" V 1800 7600 50  0000 C CNN
-F 1 "39K" V 1900 7600 50  0000 C CNN
-F 2 "Resistor_SMD:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder" V 1830 7600 50  0001 C CNN
-F 3 "~" H 1900 7600 50  0001 C CNN
-	1    1900 7600
-	0    1    1    0   
-$EndComp
-Text Label 1450 7000 2    50   ~ 0
-A2Add
-Text Label 1450 7300 2    50   ~ 0
-A1Add
-Text Label 1450 7600 2    50   ~ 0
-A0Add
 Text Label 5100 4400 2    50   ~ 0
 K1
 Text Label 5100 4750 2    50   ~ 0
