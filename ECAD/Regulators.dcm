@@ -1,0 +1,8 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP LT3012
+D 80V LDO, 250mA out, adjustable output
+K REGULATOR POSITIVE POWER LDO adjustable
+$ENDCMP
+#
+#End Doc Library
