@@ -1281,10 +1281,10 @@ F 3 "~" H 6400 2850 50  0001 C CNN
 	-1   0    0    1   
 $EndComp
 Wire Wire Line
-	6600 2750 6800 2750
-Text Label 6600 2850 0    50   ~ 0
+	6600 2950 6800 2950
+Text Label 6600 2750 0    50   ~ 0
 H+
-Text Label 6600 2950 0    50   ~ 0
+Text Label 6600 2850 0    50   ~ 0
 H-
 $Comp
 L Connector:Screw_Terminal_01x02 J3
@@ -1485,8 +1485,6 @@ Wire Wire Line
 Wire Wire Line
 	8300 3150 7750 3150
 Wire Wire Line
-	6800 2750 6800 3150
-Wire Wire Line
 	8300 3150 8700 3150
 Wire Wire Line
 	8700 3150 8700 2950
@@ -1509,7 +1507,7 @@ U 1 1 613AEBF8
 P 9050 3300
 F 0 "TP1" H 9202 3401 50  0000 L CNN
 F 1 "VIN" H 9202 3310 50  0000 L CNN
-F 2 "TestPoint:TestPoint_Pad_3.0x3.0mm" H 9250 3300 50  0001 C CNN
+F 2 "TestPoint:TestPoint_Pad_2.0x2.0mm" H 9250 3300 50  0001 C CNN
 F 3 "~" H 9250 3300 50  0001 C CNN
 	1    9050 3300
 	1    0    0    -1  
@@ -1520,7 +1518,7 @@ U 1 1 613AF955
 P 9050 3450
 F 0 "TP2" H 9202 3551 50  0000 L CNN
 F 1 "12V" H 9202 3460 50  0000 L CNN
-F 2 "TestPoint:TestPoint_Pad_3.0x3.0mm" H 9250 3450 50  0001 C CNN
+F 2 "TestPoint:TestPoint_Pad_2.0x2.0mm" H 9250 3450 50  0001 C CNN
 F 3 "~" H 9250 3450 50  0001 C CNN
 	1    9050 3450
 	1    0    0    -1  
@@ -1531,7 +1529,7 @@ U 1 1 613B3568
 P 9050 3600
 F 0 "TP3" H 9202 3701 50  0000 L CNN
 F 1 "3.3V" H 9202 3610 50  0000 L CNN
-F 2 "TestPoint:TestPoint_Pad_3.0x3.0mm" H 9250 3600 50  0001 C CNN
+F 2 "TestPoint:TestPoint_Pad_2.0x2.0mm" H 9250 3600 50  0001 C CNN
 F 3 "~" H 9250 3600 50  0001 C CNN
 	1    9050 3600
 	1    0    0    -1  
@@ -1542,7 +1540,7 @@ U 1 1 613B6FB0
 P 9050 3750
 F 0 "TP4" H 9202 3851 50  0000 L CNN
 F 1 "GND" H 9202 3760 50  0000 L CNN
-F 2 "TestPoint:TestPoint_Pad_3.0x3.0mm" H 9250 3750 50  0001 C CNN
+F 2 "TestPoint:TestPoint_Pad_2.0x2.0mm" H 9250 3750 50  0001 C CNN
 F 3 "~" H 9250 3750 50  0001 C CNN
 	1    9050 3750
 	1    0    0    -1  
@@ -1682,4 +1680,6 @@ Wire Notes Line
 	11300 2200 9500 2200
 Text Label 4000 1650 2    50   ~ 0
 FanPWM
+Wire Wire Line
+	6800 2950 6800 3150
 $EndSCHEMATC
