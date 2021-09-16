@@ -1329,8 +1329,6 @@ Connection ~ 9700 4300
 Connection ~ 9200 4300
 Wire Wire Line
 	7600 4100 7850 4100
-Wire Wire Line
-	7600 4400 7700 4400
 $Comp
 L power:+5V #PWR0128
 U 1 1 6146108C
@@ -1385,8 +1383,6 @@ Wire Wire Line
 Connection ~ 8700 4700
 Wire Wire Line
 	8700 4700 9200 4700
-Wire Wire Line
-	7700 4700 7700 4400
 Text Notes 9550 4050 0    50   ~ 0
 R32 = R31((Vout/Vref) - 1)
 Wire Wire Line
@@ -1619,7 +1615,7 @@ F 3 "~" H 8750 5050 50  0001 C CNN
 	1    8750 5050
 	1    0    0    -1  
 $EndComp
-Text Label 7600 4300 0    50   ~ 0
+Text Label 7600 4400 0    50   ~ 0
 H-
 Text Label 7600 4200 0    50   ~ 0
 H+
@@ -1755,4 +1751,8 @@ Wire Notes Line
 	10850 6450 10850 3700
 Wire Notes Line
 	10850 3700 7300 3700
+Wire Wire Line
+	7600 4300 7700 4300
+Wire Wire Line
+	7700 4300 7700 4700
 $EndSCHEMATC
