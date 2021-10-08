@@ -1586,17 +1586,6 @@ F 3 "" H 8750 5900 50  0001 C CNN
 	1    8750 5900
 	1    0    0    -1  
 $EndComp
-$Comp
-L Regulator_Linear:LD39150DT33 U2
-U 1 1 61260A04
-P 8750 5600
-F 0 "U2" H 8750 5842 50  0000 C CNN
-F 1 "LD1086DT33" H 8750 5751 50  0000 C CNN
-F 2 "Package_TO_SOT_SMD:TO-252-3_TabPin2" H 8750 5800 50  0001 C CNN
-F 3 "https://www.st.com/resource/en/datasheet/ld39150.pdf" H 8850 5350 50  0001 C CNN
-	1    8750 5600
-	1    0    0    -1  
-$EndComp
 Connection ~ 8750 5900
 Wire Wire Line
 	8750 5900 9200 5900
@@ -1755,4 +1744,15 @@ Wire Wire Line
 	7600 4300 7700 4300
 Wire Wire Line
 	7700 4300 7700 4700
+$Comp
+L Regulator_Linear:IFX27001TFV33 U2
+U 1 1 61608C34
+P 8750 5600
+F 0 "U2" H 8750 5867 50  0000 C CNN
+F 1 "LD1086DT33" H 8750 5776 50  0000 C CNN
+F 2 "Package_TO_SOT_SMD:TO-252-3_TabPin2" H 8750 5550 50  0001 C CNN
+F 3 "https://static6.arrow.com/aropdfconversion/dc75757ae45a88e5f69bdce3f2a651a5fe0ca07d/ifx27001_ds_10.pdf" H 8750 5550 50  0001 C CNN
+	1    8750 5600
+	1    0    0    -1  
+$EndComp
 $EndSCHEMATC
