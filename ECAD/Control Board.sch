@@ -6,7 +6,7 @@ encoding utf-8
 Sheet 1 1
 Title "Heater Control Board"
 Date "2021-08-25"
-Rev "0.4"
+Rev "0.5"
 Comp ""
 Comment1 "3.3V power and logic, 5V rail for fans, with 24-48V going to the heater"
 Comment2 "7 Segment displays to show temperature, target, and time"
