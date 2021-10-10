@@ -8,8 +8,8 @@ void setup() {
 
 void loop() {
   // put your main code here, to run repeatedly:
-  delay(5);
+  delay(5000);
   digitalWrite(HEATPIN, HIGH);
-  delay(5);
+  delay(5000);
   digitalWrite(HEATPIN, LOW);
 }
