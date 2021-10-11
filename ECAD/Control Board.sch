@@ -107,24 +107,13 @@ Wire Wire Line
 $Comp
 L Device:R R2
 U 1 1 6122089B
-P 950 1900
-F 0 "R2" H 1020 1946 50  0000 L CNN
-F 1 "1M" V 950 1850 50  0000 L CNN
-F 2 "Resistor_SMD:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder" V 880 1900 50  0001 C CNN
-F 3 "~" H 950 1900 50  0001 C CNN
-	1    950  1900
-	1    0    0    -1  
-$EndComp
-$Comp
-L power:GND #PWR0107
-U 1 1 6122286B
-P 950 2050
-F 0 "#PWR0107" H 950 1800 50  0001 C CNN
-F 1 "GND" H 955 1877 50  0000 C CNN
-F 2 "" H 950 2050 50  0001 C CNN
-F 3 "" H 950 2050 50  0001 C CNN
-	1    950  2050
-	1    0    0    -1  
+P 1100 950
+F 0 "R2" H 1170 996 50  0000 L CNN
+F 1 "1M" V 1100 900 50  0000 L CNN
+F 2 "Resistor_SMD:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder" V 1030 950 50  0001 C CNN
+F 3 "~" H 1100 950 50  0001 C CNN
+	1    1100 950 
+	-1   0    0    1   
 $EndComp
 Wire Wire Line
 	2300 1700 2300 1900
@@ -204,9 +193,6 @@ Connection ~ 3000 1150
 Connection ~ 2700 1400
 Wire Wire Line
 	950  1600 1200 1600
-Connection ~ 950  1600
-Wire Wire Line
-	950  1600 950  1750
 $Comp
 L Device:R R4
 U 1 1 61231066
@@ -232,7 +218,7 @@ $EndComp
 Wire Wire Line
 	950  1350 950  1200
 Wire Wire Line
-	950  1200 1200 1200
+	950  1200 1100 1200
 $Comp
 L Device:C C9
 U 1 1 612375C7
@@ -1755,4 +1741,14 @@ F 3 "https://static6.arrow.com/aropdfconversion/dc75757ae45a88e5f69bdce3f2a651a5
 	1    8750 5600
 	1    0    0    -1  
 $EndComp
+Wire Wire Line
+	1300 700  1100 700 
+Wire Wire Line
+	1100 700  1100 800 
+Connection ~ 1300 700 
+Wire Wire Line
+	1100 1100 1100 1200
+Connection ~ 1100 1200
+Wire Wire Line
+	1100 1200 1200 1200
 $EndSCHEMATC
