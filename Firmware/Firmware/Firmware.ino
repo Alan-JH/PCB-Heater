@@ -89,14 +89,14 @@ void startProfile(){ //Starts reflow profile
 
 void updateProfile(){ //Updates reflow profile, changes stages, updates setpoint if needed
   switch (reflowStage){
-    case 0:
+    case 0: //First stage ramp rate doesn't really matter, so just set the setpoint in startProfile() and move to next stage when the time comes
       if ((millis()-lastStageTime)/1000 > stageTimes[0]){
         reflowStage ++;
         lastStageTime = millis();
         lastRecordTime = millis();
       }
       break;
-    case 1:
+    case 1: //Second stage needs to maintain a relatively slow ramp, so step the setpoint up at constant rate over time until next stage
       if (millis() - lastRecordTime > 500){
         setPoint += ((0.5)*(stageTemps[1]-stageTemps[0])/(stageTimes[1]));
         lastRecordTime = millis();
@@ -106,7 +106,7 @@ void updateProfile(){ //Updates reflow profile, changes stages, updates setpoint
         lastStageTime = millis();
       }
       break;
-    case 2:
+    case 2: //Third stage ramps to peak temperature as quickly as possible, and maintains peak for set amount of time
       setPoint = stageTemps[2];
       if (Input > PEAKTHRESHOLD && !pastPeak){
         lastRecordTime = millis();
@@ -117,17 +117,17 @@ void updateProfile(){ //Updates reflow profile, changes stages, updates setpoint
         lastStageTime = millis();
       }
       break;
-    case 3:
+    case 3: //Cooldown, may incorporate fan usage later
       setPoint = 0;
       break;
   }
 }
 
 void loop() {
-  float vtemp = analogRead(THERMOCPL)*3.3/1024;
-  int temp = (int)((vtemp-0)/.005);
+  float vtemp = analogRead(THERMOCPL)*3.3/1024; //raw voltage
+  int temp = (int)((vtemp-0)/.005); //Convert to output with 0 VREF and 5mV/C step
 
-  if (dispct == 0){
+  if (dispct == 0){ //Update displays if interval = 0
     HT.clearAll();
     setDisp1(temp);
     setDisp2((int)setPoint);
@@ -136,8 +136,8 @@ void loop() {
   }
   dispct --;
 
-  Input = temp;
-  HeatPID.Compute();
+  Input = temp; //Set input
+  HeatPID.Compute(); //Compute PID, write output
   analogWrite(HEATPIN, Output);
 
   updateProfile();
