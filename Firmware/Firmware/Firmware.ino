@@ -17,7 +17,7 @@ unsigned long lastStageTime = 0;
 unsigned long lastRecordTime = 0;
 bool pastPeak = false;
 
-double kp = 2, ki = 5, kd = 1;
+double kp = 2, ki = 4, kd = 3;
 
 PID HeatPID(&Input, &Output, &setPoint, kp, ki, kd, DIRECT);
 
@@ -94,8 +94,10 @@ void updateProfile(){
       }
       break;
     case 1:
-      setPoint += ((millis() - lastRecordTime)*(float)(stageTemps[1]-stageTemps[0])/(1000*(stageTimes[1])));
-      lastRecordTime = millis();
+      if (millis() - lastRecordTime > 500){
+        setPoint += ((0.5)*(stageTemps[1]-stageTemps[0])/(stageTimes[1]));
+        lastRecordTime = millis();
+      }
       if ((millis()-lastStageTime)/1000 > stageTimes[1]){
         reflowStage ++;
         lastStageTime = millis();
