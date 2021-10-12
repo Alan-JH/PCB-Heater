@@ -5,39 +5,41 @@
 #include "ReflowProfile.h"
 
 HT16K33 HT;
-#define HEATPIN 5
-#define THERMOCPL 3
+#define HEATPIN 5 //PWM out pin for heatplate driver MOSFET
+#define THERMOCPL 3 //Analog in pin for thermocouple/AD8497 input
 
-#define DISPINTERVAL 20
-int dispct = 0;
+#define DISPINTERVAL 20 //How many loop iterations before display is updated
+int dispct = 0; //Counter value to update display
 
-double setPoint, Input, Output;
-int reflowStage = 0;
-unsigned long lastStageTime = 0;
-unsigned long lastRecordTime = 0;
-bool pastPeak = false;
+double setPoint, Input, Output; //PID values
+int reflowStage = 0; //Current reflow stage
+unsigned long lastStageTime = 0; //last stage change time in ms
+unsigned long lastRecordTime = 0; //generic last time variable, in ms
+bool pastPeak = false; //whether the temperature has passed peak temp
 
-double kp = 2, ki = 4, kd = 3;
+double kp = 2, ki = 4, kd = 3; //PID parameters to tune
 
 PID HeatPID(&Input, &Output, &setPoint, kp, ki, kd, DIRECT);
 
 void setup() {
   //HT16K33 begin
   HT.begin(0x00);
+  HT.clearAll();
+
+  //Initialize pins, set heater to low immediately
   pinMode(HEATPIN, OUTPUT);
   digitalWrite(HEATPIN, LOW);
   pinMode(THERMOCPL, INPUT);
-  
-  HT.clearAll();
 
   //Start PID
   HeatPID.SetMode(AUTOMATIC);
   setPoint = 24;
 
+  //Start profile (remove once start button is added)
   startProfile();
 }
 
-void setDisp1(int temp){
+void setDisp1(int temp){ //Updates display 1: actual temperature
   int dig1 = temp%10;
   int dig2 = (temp/10)%10;
   int dig3 = (temp/100)%10;
@@ -58,7 +60,7 @@ void setDisp1(int temp){
   HT.set7SegRaw(0, dig3bin);
 }
 
-void setDisp2(int target){
+void setDisp2(int target){ //Updates display 2: target temperature
   int dig1 = target%10;
   int dig2 = (target/10)%10;
   int dig3 = (target/100)%10;
@@ -79,12 +81,13 @@ void setDisp2(int target){
   HT.set7SegRaw(5, dig3bin);
 }
 
-void startProfile(){
+void startProfile(){ //Starts reflow profile
   lastStageTime = millis();
+  reflowStage = 0;
   setPoint = stageTemps[0];
 }
 
-void updateProfile(){
+void updateProfile(){ //Updates reflow profile, changes stages, updates setpoint if needed
   switch (reflowStage){
     case 0:
       if ((millis()-lastStageTime)/1000 > stageTimes[0]){
@@ -121,7 +124,6 @@ void updateProfile(){
 }
 
 void loop() {
-  // put your main code here, to run repeatedly:
   float vtemp = analogRead(THERMOCPL)*3.3/1024;
   int temp = (int)((vtemp-0)/.005);
 
