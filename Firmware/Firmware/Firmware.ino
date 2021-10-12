@@ -15,6 +15,7 @@ double setPoint, Input, Output;
 int reflowStage = 0;
 unsigned long lastStageTime = 0;
 unsigned long lastRecordTime = 0;
+bool pastPeak = false;
 
 double kp = 2, ki = 5, kd = 1;
 
@@ -102,8 +103,9 @@ void updateProfile(){
       break;
     case 2:
       setPoint = stageTemps[2];
-      if (Input > PEAKTHRESHOLD){
+      if (Input > PEAKTHRESHOLD && !pastPeak){
         lastRecordTime = millis();
+        pastPeak = true;
       }
       if (millis() > lastRecordTime + 1000*stageTimes[2]){
         reflowStage ++;

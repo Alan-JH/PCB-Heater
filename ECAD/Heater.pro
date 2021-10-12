@@ -1,4 +1,4 @@
-update=9/8/2021 9:23:14 PM
+update=10/12/2021 8:31:21 AM
 version=1
 last_client=pcbnew
 [general]
@@ -36,6 +36,8 @@ TrackWidth5=0.762
 TrackWidth6=1.016
 TrackWidth7=1.27
 TrackWidth8=2.54
+TrackWidth9=3.048
+TrackWidth10=3.81
 ViaDiameter1=0.8
 ViaDrill1=0.4
 dPairWidth1=0.2
