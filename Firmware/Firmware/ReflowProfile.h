@@ -12,7 +12,7 @@ uint8_t stageTemps[4] = {
 };
 
 uint8_t stageTimes[4] = {
-  60, //Ramp to soak
+  40, //Ramp to soak
   100, //During soak
   30, //Time at peak
   60 //Cool time
