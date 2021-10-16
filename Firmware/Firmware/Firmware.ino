@@ -17,7 +17,7 @@ unsigned long lastStageTime = 0; //last stage change time in ms
 unsigned long lastRecordTime = 0; //generic last time variable, in ms
 bool pastPeak = false; //whether the temperature has passed peak temp
 
-double kp = 2.5, ki = 0.5, kd = 5; //PID parameters to tune
+double kp, ki, kd; //PID parameters to tune
 
 PID HeatPID(&Input, &Output, &setPoint, kp, ki, kd, DIRECT);
 
@@ -83,6 +83,9 @@ void setDisp2(int target){ //Updates display 2: target temperature
 
 void startProfile(){ //Starts reflow profile
   lastStageTime = millis();
+  kp = 2.5;
+  ki = 0.5;
+  kd = 5;
   reflowStage = 0;
   setPoint = stageTemps[0];
 }
@@ -108,6 +111,7 @@ void updateProfile(){ //Updates reflow profile, changes stages, updates setpoint
       break;
     case 2: //Third stage ramps to peak temperature as quickly as possible, and maintains peak for set amount of time
       setPoint = stageTemps[2];
+      kp = 10;
       ki = 4;
       if (Input > PEAKTHRESHOLD && !pastPeak){
         lastRecordTime = millis();
