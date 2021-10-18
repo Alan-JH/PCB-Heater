@@ -17,7 +17,7 @@ unsigned long lastStageTime = 0; //last stage change time in ms
 unsigned long lastRecordTime = 0; //generic last time variable, in ms
 bool pastPeak = false; //whether the temperature has passed peak temp
 
-double kp, ki, kd; //PID parameters to tune
+double kp = 2.5, ki = 0.5, kd = 5; //PID parameters to tune
 
 PID HeatPID(&Input, &Output, &setPoint, kp, ki, kd, DIRECT);
 
