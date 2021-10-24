@@ -6,7 +6,7 @@ encoding utf-8
 Sheet 1 1
 Title "PCB Heating Element"
 Date "2021-08-25"
-Rev "0.1"
+Rev "1.0"
 Comp ""
 Comment1 "To be fabricated as a single layer aluminum PCB"
 Comment2 ""

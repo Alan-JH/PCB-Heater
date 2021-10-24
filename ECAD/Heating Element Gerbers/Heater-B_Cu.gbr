@@ -2,7 +2,7 @@
 %TF.CreationDate,2021-10-23T20:55:03-04:00*%
 %TF.ProjectId,Heater,48656174-6572-42e6-9b69-6361645f7063,rev?*%
 %TF.SameCoordinates,Original*%
-%TF.FileFunction,Paste,Top*%
+%TF.FileFunction,Copper,L2,Bot*%
 %TF.FilePolarity,Positive*%
 %FSLAX46Y46*%
 G04 Gerber Fmt 4.6, Leading zero omitted, Abs format (unit mm)*
@@ -11,5 +11,17 @@ G04 Created by KiCad (PCBNEW (5.1.9)-1) date 2021-10-23 20:55:03*
 %LPD*%
 G01*
 G04 APERTURE LIST*
+%TA.AperFunction,ComponentPad*%
+%ADD10R,6.000000X6.000000*%
+%TD*%
 G04 APERTURE END LIST*
+D10*
+%TO.P,J2,1*%
+%TO.N,Net-(J1-Pad1)*%
+X60325000Y-16510000D03*
+%TD*%
+%TO.P,J1,1*%
+%TO.N,Net-(J1-Pad1)*%
+X47625000Y-16510000D03*
+%TD*%
 M02*
